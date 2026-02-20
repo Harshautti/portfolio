@@ -1,0 +1,170 @@
+<div class="contact-hero text-white text-center position-relative overflow-hidden">
+  <div class="hero-bg-animation"></div>
+  <div class="hero-shapes">
+    <div class="hero-shape-1"></div>
+    <div class="hero-shape-2"></div>
+  </div>
+  <div class="position-relative z-index-1">
+    <div class="badge bg-white text-primary mb-2 animate-fade-in">💬 Get In Touch</div>
+    <h1 class="display-4 fw-bold mb-2 animate-fade-in-delay-1">Contact Me</h1>
+    <p class="animate-fade-in-delay-2">Let's build something amazing together 🚀</p>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="row g-3">
+
+    <!-- LEFT SIDE (INFO) -->
+    <div class="col-md-4 animate-slide-left">
+      <div class="card contact-info shadow-lg border-0 h-100">
+        <div class="card-header-gradient">
+          <i class="bi bi-chat-dots-fill"></i>
+        </div>
+        <div class="card-body p-3">
+          <h5 class="fw-bold mb-3">Get In Touch</h5>
+
+          <div class="contact-item">
+            <div class="contact-icon bg-danger-subtle">
+              <i class="bi bi-envelope-fill text-danger"></i>
+            </div>
+            <div class="contact-details">
+              <label class="small text-muted mb-0">Email</label>
+              <a href="mailto:harshasunny501@gmail.com" class="text-decoration-none text-dark fw-semibold small d-block">
+                harshasunny501&#64;gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon bg-success-subtle">
+              <i class="bi bi-telephone-fill text-success"></i>
+            </div>
+            <div class="contact-details">
+              <label class="small text-muted mb-0">Phone</label>
+              <a href="tel:+916281502001" class="text-decoration-none text-dark fw-semibold small d-block">
+                +91 6281502001
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon bg-primary-subtle">
+              <i class="bi bi-geo-alt-fill text-primary"></i>
+            </div>
+            <div class="contact-details">
+              <label class="small text-muted mb-0">Location</label>
+              <span class="text-dark fw-semibold small">India</span>
+            </div>
+          </div>
+
+          <hr class="my-3">
+
+          <div class="social-section">
+            <h6 class="fw-bold mb-2">Connect With Me</h6>
+            <div class="d-flex gap-2">
+              <a href="https://www.linkedin.com/in/utti-sree-harsha-a4314021a" target="_blank"
+                 class="social-btn social-btn-linkedin">
+                <i class="bi bi-linkedin"></i>
+              </a>
+
+              <a href="https://github.com/Harshautti" target="_blank"
+                 class="social-btn social-btn-github">
+                <i class="bi bi-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="availability-badge mt-3">
+            <div class="status-dot"></div>
+            <span class="small">Available for opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE (FORM) -->
+    <div class="col-md-8 animate-slide-right">
+      <div class="card form-card shadow-lg border-0">
+        <div class="card-body p-3 p-md-4">
+          <div class="text-center mb-3">
+            <div class="form-icon mb-2">
+              <i class="bi bi-send-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Send a Message</h5>
+            <p class="text-muted small mb-0">Fill out the form and I'll get back to you soon!</p>
+          </div>
+
+          <form [formGroup]="contactForm" netlify>
+
+            <div class="form-floating mb-3 form-group-custom">
+              <input
+                type="text"
+                formControlName="name"
+                class="form-control form-control-custom"
+                id="name"
+                placeholder="Name"
+                name="name"
+                [class.is-invalid]="submitted && contactForm.controls['name'].errors"
+                required>
+              <label for="name">
+                <i class="bi bi-person me-2"></i>Your Name
+              </label>
+              <div class="invalid-feedback" *ngIf="submitted && contactForm.controls['name'].errors">
+                <i class="bi bi-exclamation-circle me-1"></i>
+                Please enter your name.
+              </div>
+            </div>
+
+            <div class="form-floating mb-3 form-group-custom">
+              <input
+                type="email"
+                formControlName="email"
+                class="form-control form-control-custom"
+                id="email"
+                placeholder="Email"
+                name="email"
+                [class.is-invalid]="submitted && contactForm.controls['email'].errors"
+                required>
+              <label for="email">
+                <i class="bi bi-envelope me-2"></i>Your Email
+              </label>
+              <div class="invalid-feedback" *ngIf="submitted && contactForm.controls['email'].errors">
+                <i class="bi bi-exclamation-circle me-1"></i>
+                Please enter a valid email.
+              </div>
+            </div>
+
+            <div class="form-floating mb-3 form-group-custom">
+              <textarea
+                class="form-control form-control-custom"
+                formControlName="message"
+                id="message"
+                placeholder="Message"
+                name="message"
+                style="height:100px"
+                [class.is-invalid]="submitted && contactForm.controls['message'].errors"
+                required></textarea>
+              <label for="message">
+                <i class="bi bi-chat-text me-2"></i>Your Message
+              </label>
+              <div class="invalid-feedback" *ngIf="submitted && contactForm.controls['message'].errors">
+                <i class="bi bi-exclamation-circle me-1"></i>
+                Please enter your message.
+              </div>
+            </div>
+
+            <button (click)="submitForm()" class="btn btn-gradient-custom w-100" type="button">
+              <span class="btn-text">
+                <i class="bi bi-send-fill me-2"></i>Send Message
+              </span>
+              <span class="btn-icon">🚀</span>
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
